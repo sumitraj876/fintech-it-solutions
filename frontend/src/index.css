@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Design tokens ---------- */
+:root {
+  --color-jet: #08080B;
+  --color-graphite: #17171F;
+  --color-pink: #FF168A;
+  --color-yellow: #FFE600;
+  --color-offwhite: #F4F4F5;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+  background-color: transparent;
+  color: var(--color-offwhite);
+}
+
+body {
+  @apply font-sans antialiased;
+  background-color: transparent;
+  color: var(--color-offwhite);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-pink);
+  color: var(--color-jet);
+}
+
+/* Subtle scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-graphite) var(--color-jet);
+}
+
+/* Respect reduced-motion for all smooth scroll */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,37 @@
+# ===== Root .gitignore for D:\FintechITSolutions =====
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+build/
+*.local
+
+# Environment / secrets — MUST stay untracked
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+
+# Build / cache
+.vite/
+.cache/
+coverage/
+
+# Temporary / local
+*.tmp
+*.bak
