@@ -13,6 +13,7 @@ export type ServiceDetail = {
   impact: { label: string; value: number; display: string }[];
   phases: { week: string; title: string; desc: string }[];
   latestModels: string[];
+  prerequisites: string[];
 };
 
 export const serviceDetails: ServiceDetail[] = [
@@ -157,7 +158,7 @@ export const serviceDetails: ServiceDetail[] = [
   {
     slug: 'crm-development',
     businessProblem: 'Your sales team tracks leads in Excel. Deals fall through the cracks and management has no visibility.',
-    ourSolution: 'We build custom CRM platforms tailored exactly to your sales workflow â€” no bloatware, just what you actually use.',
+    ourSolution: 'We build custom CRM platforms tailored exactly to your sales workflow Ã¢â‚¬â€ no bloatware, just what you actually use.',
     deliverables: ['Custom CRM web app', 'Sales pipeline dashboard', 'Automated workflows', 'Reporting'],
     techApproach: ['React + TypeScript', 'Node.js + Express', 'PostgreSQL'],
     exampleUseCases: ['B2B sales tracking', 'Real estate lead management', 'Support ticketing'],
