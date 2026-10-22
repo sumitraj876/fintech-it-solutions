@@ -15,7 +15,7 @@ export default function CareersPage() {
 
   return (
     <>
-      <SEO title="Careers  â€”  â€” Ã†Â’ â€” Â‚ â€”  â€”  â€” Â‚ â€” Ã…Â¡ â€” Â‚ â€”  â€”  â€” Âš â€” Â‚ â€”  build with us" description="Roles in AI/ML, Generative AI, full-stack, data, software engineering, and cloud/DevOps." path="/careers" />
+      <SEO title="Careers  —  — †’ — ‚ —  —  — ‚ — … — ‚ —  —  — š — ‚ —  build with us" description="Roles in AI/ML, Generative AI, full-stack, data, software engineering, and cloud/DevOps." path="/careers" />
       <PageHeader eyebrow={careersPage.eyebrow}
         title={careersPage.title}
         description={careersPage.description}

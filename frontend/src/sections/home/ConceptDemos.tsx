@@ -15,7 +15,7 @@ export function ConceptDemos() {
           <SectionHeading
             eyebrow="CONCEPT DEMOS"
             title="Interfaces we can build for you."
-            description="A look at the custom CRM and ERP dashboards we design for enterprise clients. These are illustrative mockups â€” not live client data."
+            description="A look at the custom CRM and ERP dashboards we design for enterprise clients. These are illustrative mockups — not live client data."
             align="center"
           />
         </Reveal>
@@ -68,9 +68,9 @@ export function ConceptDemos() {
                     <div className="space-y-3">
                       <div className="text-xs uppercase tracking-wider text-offwhite/50 font-semibold mb-2">Qualified (3)</div>
                       {[
-                        { name: 'Acme Corp', value: 'â‚¹45,000', color: 'border-pink/50' },
-                        { name: 'Stark Industries', value: 'â‚¹1,20,000', color: 'border-pink/50' },
-                        { name: 'Wayne Ent.', value: 'â‚¹85,000', color: 'border-pink/50' }
+                        { name: 'Acme Corp', value: '₹45,000', color: 'border-pink/50' },
+                        { name: 'Stark Industries', value: '₹1,20,000', color: 'border-pink/50' },
+                        { name: 'Wayne Ent.', value: '₹85,000', color: 'border-pink/50' }
                       ].map((lead, i) => (
                         <div key={i} className={`p-4 rounded-xl bg-jet border-l-4 ${lead.color}`}>
                           <p className="text-sm font-semibold text-offwhite">{lead.name}</p>
@@ -82,8 +82,8 @@ export function ConceptDemos() {
                     <div className="space-y-3">
                       <div className="text-xs uppercase tracking-wider text-offwhite/50 font-semibold mb-2">Proposal Sent (2)</div>
                       {[
-                        { name: 'Globex', value: 'â‚¹2,50,000', color: 'border-yellow/50' },
-                        { name: 'Initech', value: 'â‚¹90,000', color: 'border-yellow/50' }
+                        { name: 'Globex', value: '₹2,50,000', color: 'border-yellow/50' },
+                        { name: 'Initech', value: '₹90,000', color: 'border-yellow/50' }
                       ].map((lead, i) => (
                         <div key={i} className={`p-4 rounded-xl bg-jet border-l-4 ${lead.color}`}>
                           <p className="text-sm font-semibold text-offwhite">{lead.name}</p>
@@ -95,7 +95,7 @@ export function ConceptDemos() {
                     <div className="space-y-3">
                       <div className="text-xs uppercase tracking-wider text-offwhite/50 font-semibold mb-2">Closed Won (1)</div>
                       {[
-                        { name: 'Umbrella Corp', value: 'â‚¹4,00,000', color: 'border-green-500/50' }
+                        { name: 'Umbrella Corp', value: '₹4,00,000', color: 'border-green-500/50' }
                       ].map((lead, i) => (
                         <div key={i} className={`p-4 rounded-xl bg-jet border-l-4 ${lead.color}`}>
                           <p className="text-sm font-semibold text-offwhite">{lead.name}</p>
@@ -114,7 +114,7 @@ export function ConceptDemos() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="p-6 rounded-xl bg-jet border border-white/5">
                       <p className="text-sm text-offwhite/50 mb-2">Total Stock Value</p>
-                      <p className="text-3xl font-bold text-offwhite">â‚¹1,24,50,000</p>
+                      <p className="text-3xl font-bold text-offwhite">₹1,24,50,000</p>
                       <div className="mt-4 h-2 w-full bg-graphite rounded-full overflow-hidden">
                         <div className="h-full bg-pink w-3/4 rounded-full" />
                       </div>
@@ -134,8 +134,8 @@ export function ConceptDemos() {
                     </div>
                     <div className="space-y-3">
                       {[
-                        { id: 'PO-2024-089', vendor: 'TechSupplies Ltd', amount: 'â‚¹45,000', status: 'Approved' },
-                        { id: 'PO-2024-090', vendor: 'Global Parts Inc', amount: 'â‚¹1,20,000', status: 'Pending' }
+                        { id: 'PO-2024-089', vendor: 'TechSupplies Ltd', amount: '₹45,000', status: 'Approved' },
+                        { id: 'PO-2024-090', vendor: 'Global Parts Inc', amount: '₹1,20,000', status: 'Pending' }
                       ].map((order, i) => (
                         <div key={i} className="flex justify-between items-center p-3 rounded-lg bg-white/[0.02] border border-white/[0.05]">
                           <div>

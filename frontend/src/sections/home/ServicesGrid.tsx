@@ -16,7 +16,7 @@ export function ServicesGrid() {
           <SectionHeading
             eyebrow="SERVICES"
             title="Capabilities that compound."
-            description="Six focused practices â€” combined into end-to-end engagements or used individually."
+            description="Six focused practices — combined into end-to-end engagements or used individually."
           />
         </Reveal>
 
