@@ -24,13 +24,14 @@ export type SendMailArgs = {
   text: string;
   html?: string;
   replyTo?: string;
+  to?: string;
 };
 
 export async function sendMail(args: SendMailArgs): Promise<void> {
   const t = getTransporter();
   await t.sendMail({
     from: `"FINTECH IT SOLUTIONS" <${env.SMTP_USER}>`,
-    to: env.MAIL_TO,
+    to: args.to || env.MAIL_TO,
     subject: args.subject,
     text: args.text,
     html: args.html,
@@ -38,10 +39,6 @@ export async function sendMail(args: SendMailArgs): Promise<void> {
   });
 }
 
-/**
- * One-shot verification that the SMTP configuration works.
- * Called from scripts/test-email.ts and (optionally) from a /api/health/smtp route.
- */
 export async function verifySmtp(): Promise<void> {
   const t = getTransporter();
   await t.verify();

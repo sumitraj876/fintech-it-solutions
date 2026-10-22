@@ -11,6 +11,9 @@ import LocationsPage from './pages/LocationsPage';
 import LeadershipPage from './pages/LeadershipPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
+import PrivacyPage from './pages/PrivacyPage';
+import TermsPage from './pages/TermsPage';
+import LicensePage from './pages/LicensePage';
 import NotFoundPage from './pages/NotFoundPage';
 
 export const router = createBrowserRouter(
@@ -30,6 +33,9 @@ export const router = createBrowserRouter(
         { path: 'leadership', element: <LeadershipPage /> },
         { path: 'careers', element: <CareersPage /> },
         { path: 'contact', element: <ContactPage /> },
+        { path: 'privacy', element: <PrivacyPage /> },
+        { path: 'terms', element: <TermsPage /> },
+        { path: 'license', element: <LicensePage /> },
         { path: '*', element: <NotFoundPage /> },
       ],
     },

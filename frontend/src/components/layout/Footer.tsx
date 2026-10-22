@@ -10,12 +10,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 py-14 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12">
           
-          {/* Brand column */}
           <div className="md:col-span-5">
             <Link
               to="/"
               className="font-display text-lg font-bold tracking-tight inline-block"
-              aria-label={`${site.company.name} — home`}
+              aria-label={`${site.company.name} - home`}
             >
               <span className="text-offwhite">FINTECH</span>{' '}
               <span className="text-pink">IT</span>{' '}
@@ -27,7 +26,6 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Quick links */}
           <div className="md:col-span-3">
             <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-yellow">
               Explore
@@ -46,13 +44,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Get in touch (Icons Only) */}
           <div className="md:col-span-4">
             <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-yellow">
               Get in touch
             </h3>
             <div className="mt-4 flex items-center gap-4">
-              {/* Mail Icon */}
               <a
                 href="mailto:fintech.itsolutions26@gmail.com"
                 aria-label="Email us"
@@ -60,8 +56,6 @@ export function Footer() {
               >
                 <Mail size={18} />
               </a>
-
-              {/* Instagram Icon */}
               <a
                 href={site.socials.instagram}
                 target="_blank"
@@ -88,14 +82,21 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-12 md:mt-16 flex flex-col gap-4 md:flex-row md:items-center md:justify-between border-t border-white/[0.06] pt-8">
-          <p className="text-xs text-offwhite/40">
-            © {year} {site.company.name}. All rights reserved.
-          </p>
-          <p className="text-xs text-offwhite/40">
-            Service coverage: Pune · Bengaluru · Noida
-          </p>
+        <div className="mt-12 md:mt-16 border-t border-white/[0.06] pt-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <p className="text-xs text-offwhite/40">
+              &copy; {year} {site.company.name}. All rights reserved.
+            </p>
+            <p className="text-xs text-offwhite/40">
+              Service coverage: Pune &middot; Bengaluru &middot; Noida
+            </p>
+          </div>
+          
+          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-xs text-offwhite/50">
+            <Link to="/privacy" className="hover:text-pink transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-pink transition-colors">Terms of Service</Link>
+            <Link to="/license" className="hover:text-pink transition-colors">Licensing</Link>
+          </div>
         </div>
       </div>
     </footer>
