@@ -2,7 +2,6 @@ import { MapPin } from 'lucide-react';
 import { Section } from '../components/ui/Section';
 import { Container } from '../components/ui/Container';
 import { PageHeader } from '../components/ui/PageHeader';
-import { SectionHeading } from '../components/ui/SectionHeading';
 import { Reveal } from '../components/ui/Reveal';
 import { locations, statusLabels, type LocationStatus } from '../data/locations';
 

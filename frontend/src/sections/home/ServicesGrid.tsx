@@ -1,5 +1,4 @@
 import { ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { Section } from '../../components/ui/Section';
 import { Container } from '../../components/ui/Container';
 import { SectionHeading } from '../../components/ui/SectionHeading';
@@ -17,7 +16,7 @@ export function ServicesGrid() {
           <SectionHeading
             eyebrow="SERVICES"
             title="Capabilities that compound."
-            description="Six focused practices — combined into end-to-end engagements or used individually."
+            description="Six focused practices â€” combined into end-to-end engagements or used individually."
           />
         </Reveal>
 

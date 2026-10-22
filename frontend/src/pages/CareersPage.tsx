@@ -15,7 +15,7 @@ export default function CareersPage() {
 
   return (
     <>
-      <SEO title="Careers  —  — Æ —  —  —  —  — Å¡ —  —  —  —  —  —  build with us" description="Roles in AI/ML, Generative AI, full-stack, data, software engineering, and cloud/DevOps." path="/careers" />
+      <SEO title="Careers  â€”  â€” Ã†Â’ â€” Â‚ â€”  â€”  â€” Â‚ â€” Ã…Â¡ â€” Â‚ â€”  â€”  â€” Âš â€” Â‚ â€”  build with us" description="Roles in AI/ML, Generative AI, full-stack, data, software engineering, and cloud/DevOps." path="/careers" />
       <PageHeader eyebrow={careersPage.eyebrow}
         title={careersPage.title}
         description={careersPage.description}
@@ -166,8 +166,7 @@ export default function CareersPage() {
           </Reveal>
 
           <Reveal delay={0.05}>
-            <GoogleFormEmbed
-              height={1000}
+            <GoogleFormEmbed variant="careers" height={1000}
               notConfiguredLabel="Careers form not configured yet"
               externalLabel="Open careers form in new tab"
             />
