@@ -1,29 +1,20 @@
 import { useState, type FormEvent } from 'react';
 import { AlertCircle, CheckCircle2, Loader2, Send } from 'lucide-react';
-import { submitContact, type ContactRequest } from '../../lib/api';
+import emailjs from '@emailjs/browser';
+import { type ContactRequest } from '../../lib/api';
 
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
 const SERVICES = [
-  'AI & ML',
-  'Generative AI',
-  'Full-Stack Development',
-  'Data Analytics',
-  'Software Engineering',
-  'Cloud & DevOps',
-  'Other',
+  'AI & ML', 'Generative AI', 'Full-Stack Development', 'Data Analytics', 
+  'Software Engineering', 'Cloud & DevOps', 'CRM', 'ERP', 'HRMS', 
+  'FinTech', 'Enterprise AI', 'BI', 'API Integration', 'Other'
 ];
 
 const PREFERRED = ['Email', 'Phone', 'Video call'];
 
 const emptyForm: ContactRequest = {
-  name: '',
-  email: '',
-  company: '',
-  service: '',
-  message: '',
-  preferredContact: '',
-  website: '',
+  name: '', email: '', company: '', service: '', message: '', preferredContact: '', website: '',
 };
 
 export function ContactForm() {
@@ -46,25 +37,41 @@ export function ContactForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setState('submitting');
-    setError('');
-    setFieldErrors({});
-
-    const result = await submitContact(form);
-
-    if (result.ok) {
-      setState('success');
-      setForm(emptyForm);
+    
+    // Basic client-side validation
+    const errors: Record<string, string> = {};
+    if (!form.name || form.name.length < 2) errors.name = 'Name is required';
+    if (!form.email || !form.email.includes('@')) errors.email = 'Valid email is required';
+    if (!form.service) errors.service = 'Select a service';
+    if (!form.message || form.message.length < 10) errors.message = 'Message must be at least 10 characters';
+    
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
       return;
     }
 
-    setState('error');
-    setError(result.error);
+    setState('submitting');
+    setError('');
 
-    if (result.issues) {
-      const map: Record<string, string> = {};
-      for (const issue of result.issues) map[issue.field] = issue.message;
-      setFieldErrors(map);
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: form.name,
+          email: form.email,
+          company: form.company || 'N/A',
+          service: form.service,
+          message: form.message,
+          preferredContact: form.preferredContact || 'N/A',
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      );
+      setState('success');
+      setForm(emptyForm);
+    } catch (err: any) {
+      setState('error');
+      setError(err?.text || 'Failed to send message. Please try again.');
     }
   };
 
@@ -74,35 +81,21 @@ export function ContactForm() {
         <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-pink/15 text-pink mb-4">
           <CheckCircle2 size={26} />
         </div>
-        <h3 className="font-display text-2xl font-semibold text-offwhite">
-          Message received.
-        </h3>
+        <h3 className="font-display text-2xl font-semibold text-offwhite">Message received.</h3>
         <p className="mt-3 text-sm text-offwhite/70 max-w-md mx-auto leading-relaxed">
-          Thanks for reaching out. We will get back to you shortly at the email
-          you provided.
+          Thanks for reaching out. We will get back to you shortly at the email you provided.
         </p>
-        <button
-          type="button"
-          onClick={() => setState('idle')}
-          className="mt-6 text-sm font-semibold text-pink hover:text-yellow transition-colors"
-        >
+        <button type="button" onClick={() => setState('idle')} className="mt-6 text-sm font-semibold text-pink hover:text-yellow transition-colors">
           Send another message
         </button>
       </div>
     );
   }
 
-  const fieldError = (key: string) =>
-    fieldErrors[key] ? (
-      <p className="mt-1 text-xs text-pink">{fieldErrors[key]}</p>
-    ) : null;
+  const fieldError = (key: string) => fieldErrors[key] ? <p className="mt-1 text-xs text-pink">{fieldErrors[key]}</p> : null;
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
-      <div style={{ position: 'absolute', left: '-9999px' }} aria-hidden="true">
-        <label>Website<input type="text" tabIndex={-1} autoComplete="off" value={form.website ?? ''} onChange={update('website')} /></label>
-      </div>
-
       {state === 'error' && (
         <div className="flex items-start gap-3 rounded-xl border border-pink/30 bg-pink/5 p-4">
           <AlertCircle size={18} className="shrink-0 mt-0.5 text-pink" />
@@ -154,11 +147,7 @@ export function ContactForm() {
 
       <div className="pt-2">
         <button type="submit" disabled={state === 'submitting'} className="inline-flex items-center justify-center gap-2 rounded-full bg-pink px-7 py-3 text-sm font-semibold text-jet transition-colors hover:bg-yellow disabled:opacity-60 disabled:cursor-not-allowed">
-          {state === 'submitting' ? (
-            <><Loader2 size={16} className="animate-spin" />Sending — ¦</>
-          ) : (
-            <><Send size={16} />Send inquiry</>
-          )}
+          {state === 'submitting' ? <><Loader2 size={16} className="animate-spin" />Sending…</> : <><Send size={16} />Send inquiry</>}
         </button>
       </div>
     </form>
