@@ -56,7 +56,7 @@ export function ContactForm() {
     try {
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        "template_t3fchai",
         {
           name: form.name,
           email: form.email,
@@ -71,7 +71,7 @@ export function ContactForm() {
       // Send auto-reply to the client
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_AUTOREPLY_ID,
+        "template_uncasv8",
         {
           name: form.name,
           email: form.email,
@@ -161,7 +161,7 @@ export function ContactForm() {
 
       <div className="pt-2">
         <button type="submit" disabled={state === 'submitting'} className="inline-flex items-center justify-center gap-2 rounded-full bg-pink px-7 py-3 text-sm font-semibold text-jet transition-colors hover:bg-yellow disabled:opacity-60 disabled:cursor-not-allowed">
-          {state === 'submitting' ? <><Loader2 size={16} className="animate-spin" />SendingÃ¢â‚¬Â¦</> : <><Send size={16} />Send inquiry</>}
+          {state === 'submitting' ? <><Loader2 size={16} className="animate-spin" />SendingÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦</> : <><Send size={16} />Send inquiry</>}
         </button>
       </div>
     </form>
