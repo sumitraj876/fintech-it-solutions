@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# Replace YOUR-DOMAIN.com with your real domain when purchased
-Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
+# Replace fintechitsolutions.in with your real domain when purchased
+Sitemap: https://fintechitsolutions.in/sitemap.xml
