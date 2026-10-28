@@ -11,7 +11,7 @@ export default function ContactPage() {
       <PageHeader
         eyebrow="CONTACT"
         title="Tell us what you're building."
-        description="Share the problem, the constraints, and where you are today. We respond with an honest assessment — including whether we are the right team for it."
+        description="Share the problem, the constraints, and where you are today. We respond with an honest assessment â€” including whether we are the right team for it."
       />
 
       <Section className="bg-jet">
@@ -31,10 +31,10 @@ export default function ContactPage() {
                     Reach us directly at:
                   </p>
                   <a
-                    href="mailto:fintech.itsolutions26@gmail.com"
+                    href="mailto:hello@fintechitsolutions.in"
                     className="mt-2 inline-block font-medium text-pink hover:text-yellow transition-colors break-all"
                   >
-                    fintech.itsolutions26@gmail.com
+                    hello@fintechitsolutions.in
                   </a>
                   <p className="mt-4 text-xs text-offwhite/45 leading-relaxed">
                     Email delivery depends on our domain and mailbox being
@@ -55,7 +55,7 @@ export default function ContactPage() {
                   <ul className="mt-3 space-y-2.5 text-sm text-offwhite/65 leading-relaxed">
                     <li className="flex gap-2">
                       <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-pink" />
-                      A reply within a reasonable timeframe — not a marketing autoresponder.
+                      A reply within a reasonable timeframe â€” not a marketing autoresponder.
                     </li>
                     <li className="flex gap-2">
                       <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-pink" />

@@ -161,7 +161,7 @@ export function ContactForm() {
 
       <div className="pt-2">
         <button type="submit" disabled={state === 'submitting'} className="inline-flex items-center justify-center gap-2 rounded-full bg-pink px-7 py-3 text-sm font-semibold text-jet transition-colors hover:bg-yellow disabled:opacity-60 disabled:cursor-not-allowed">
-          {state === 'submitting' ? <><Loader2 size={16} className="animate-spin" />SendingÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦</> : <><Send size={16} />Send inquiry</>}
+          {state === 'submitting' ? <><Loader2 size={16} className="animate-spin" />Sending...</> : <><Send size={16} />Send inquiry</>}
         </button>
       </div>
     </form>
