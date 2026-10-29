@@ -43,6 +43,7 @@ export const primaryNav: NavItem[] = [
   { label: 'Locations', to: '/locations' },
   { label: 'Leadership', to: '/leadership' },
   { label: 'Careers', to: '/careers' },
+  { label: 'Blog', to: '/blog' },
 ];
 
 export const footerNav: NavItem[] = [
@@ -54,7 +55,7 @@ export const footerNav: NavItem[] = [
  * Edit text here without touching any component.
  */
 export const hero = {
-  eyebrow: 'FINTECH IT SOLUTIONS · EST. 2024',
+  eyebrow: 'FINTECH IT SOLUTIONS Â· EST. 2024',
   headlineTop: 'WE ENGINEER',
   headlineBottom: "WHAT'S NEXT.",
   supporting:
