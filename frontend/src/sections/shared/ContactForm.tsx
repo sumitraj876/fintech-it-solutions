@@ -53,7 +53,17 @@ export function ContactForm() {
     setError('');
 
     try {
-      const slug = form.service.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
+      let slug = form.service.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
+      // Match form service names to proposal slugs
+      if (slug === 'full-stack-development') slug = 'full-stack';
+      if (slug === 'ai-&-ml' || slug === 'ai-ml') slug = 'ai-ml';
+      if (slug === 'crm-solutions') slug = 'crm-development';
+      if (slug === 'erp-systems') slug = 'erp-business';
+      if (slug === 'hrms') slug = 'hrms-workforce';
+      if (slug === 'fintech') slug = 'fintech-apps';
+      if (slug === 'enterprise-ai') slug = 'enterprise-ai';
+      if (slug === 'bi-&-reporting' || slug === 'bi') slug = 'business-intelligence';
+      if (slug === 'api-integration') slug = 'api-integration';
 
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
