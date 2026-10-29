@@ -12,8 +12,8 @@ export default function AboutPage() {
   return (
     <>
       <SEO
-        title="About — a new company built for what comes next"
-        description="FINTECH IT SOLUTIONS was founded in 2024 by Sumit Kumar to help startups, SMBs, and enterprises build with AI, software, and data."
+        title="About Us | FINTECH IT SOLUTIONS"
+        description="Founded in 2024 by Sumit Kumar, we are a young team of engineers building the future of enterprise software."
         path="/about"
       />
       <PageHeader
@@ -57,8 +57,8 @@ export default function AboutPage() {
           <Reveal>
             <SectionHeading
               eyebrow="PRINCIPLES"
-              title="How we work, in writing."
-              description="Six principles we use to make trade-offs when the right call is not obvious."
+              title="About Us | FINTECH IT SOLUTIONS"
+              description="Founded in 2024 by Sumit Kumar, we are a young team of engineers building the future of enterprise software."
             />
           </Reveal>
           <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
@@ -79,8 +79,8 @@ export default function AboutPage() {
           <Reveal>
             <SectionHeading
               eyebrow="TIMELINE"
-              title="Our story so far."
-              description="A short, honest history — we started in 2024 and are still early."
+              title="About Us | FINTECH IT SOLUTIONS"
+              description="Founded in 2024 by Sumit Kumar, we are a young team of engineers building the future of enterprise software."
             />
           </Reveal>
           <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">

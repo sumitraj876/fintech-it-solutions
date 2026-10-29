@@ -11,12 +11,12 @@ import { services } from '../data/services';
 export default function ServicesPage() {
   return (
     <>
-      <SEO title="Services" description="AI/ML, Generative AI, Full-Stack, Data Analytics, Software Engineering, Cloud/DevOps, CRM, ERP, HRMS, FinTech, BI, and API Integration." path="/services" />
+      <SEO title="Services | AI/ML, Full-Stack, CRM, ERP & Cloud" description="Explore our 13 core services: Artificial Intelligence, Generative AI, Full-Stack Development, Data Analytics, and more." path="/services" />
       
       <PageHeader
         eyebrow="SERVICES"
-        title="Thirteen practices. One team."
-        description="We combine deep engineering capability with enterprise domain expertise. Explore our full stack of services."
+        title="Services | AI/ML, Full-Stack, CRM, ERP & Cloud"
+        description="Explore our 13 core services: Artificial Intelligence, Generative AI, Full-Stack Development, Data Analytics, and more."
       />
 
       <Section className="bg-jet">

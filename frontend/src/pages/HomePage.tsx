@@ -17,8 +17,8 @@ export default function HomePage() {
   return (
     <>
       <SEO
-        title="AI, software, and digital transformation"
-        description="FINTECH IT SOLUTIONS builds AI-powered software, data products, and cloud systems for startups, SMBs, and enterprises."
+        title="FINTECH IT SOLUTIONS | AI, Software & Digital Transformation"
+        description="We build AI-powered software, enterprise platforms, and custom web apps for startups and enterprises. Based in India."
         path="/"
       />
       <Hero />

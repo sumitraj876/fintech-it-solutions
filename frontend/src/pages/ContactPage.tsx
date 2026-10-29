@@ -10,8 +10,8 @@ export default function ContactPage() {
     <>
       <PageHeader
         eyebrow="CONTACT"
-        title="Tell us what you're building."
-        description="Share the problem, the constraints, and where you are today. We respond with an honest assessment â€” including whether we are the right team for it."
+        title="Contact Us | Start Your Project"
+        description="Ready to build something great? Contact FINTECH IT SOLUTIONS for a free consultation and project quote."
       />
 
       <Section className="bg-jet">
@@ -55,7 +55,7 @@ export default function ContactPage() {
                   <ul className="mt-3 space-y-2.5 text-sm text-offwhite/65 leading-relaxed">
                     <li className="flex gap-2">
                       <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-pink" />
-                      A reply within a reasonable timeframe â€” not a marketing autoresponder.
+                      A reply within a reasonable timeframe Ã¢â‚¬â€ not a marketing autoresponder.
                     </li>
                     <li className="flex gap-2">
                       <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-pink" />
