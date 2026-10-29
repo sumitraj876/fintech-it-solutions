@@ -1,5 +1,5 @@
 import { useParams, Navigate } from 'react-router-dom';
-import { ArrowRight, Check, Info } from 'lucide-react';
+import { ArrowRight, Info } from 'lucide-react';
 import { Section } from '../components/ui/Section';
 import { Container } from '../components/ui/Container';
 import { PageHeader } from '../components/ui/PageHeader';
