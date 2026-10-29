@@ -11,6 +11,8 @@ import LocationsPage from './pages/LocationsPage';
 import LeadershipPage from './pages/LeadershipPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
+import BlogPage from './pages/BlogPage';
+import BlogDetailPage from './pages/BlogDetailPage';
 import ProposalPage from './pages/ProposalPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
@@ -34,6 +36,8 @@ export const router = createBrowserRouter(
         { path: 'leadership', element: <LeadershipPage /> },
         { path: 'careers', element: <CareersPage /> },
         { path: 'contact', element: <ContactPage /> },
+        { path: 'blog', element: <BlogPage /> },
+        { path: 'blog/:id', element: <BlogDetailPage /> },
         { path: 'proposal/:slug', element: <ProposalPage /> },
         { path: 'privacy', element: <PrivacyPage /> },
         { path: 'terms', element: <TermsPage /> },
