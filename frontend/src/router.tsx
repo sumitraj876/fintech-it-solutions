@@ -11,6 +11,7 @@ import LocationsPage from './pages/LocationsPage';
 import LeadershipPage from './pages/LeadershipPage';
 import CareersPage from './pages/CareersPage';
 import ContactPage from './pages/ContactPage';
+import ProposalPage from './pages/ProposalPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
 import LicensePage from './pages/LicensePage';
