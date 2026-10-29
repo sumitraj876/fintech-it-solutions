@@ -63,7 +63,8 @@ export function ContactForm() {
           company: form.company || 'N/A',
           service: form.service,
           message: form.message,
-          preferredContact: form.preferredContact || 'N/A',
+          preferredContact: form.preferredContact,
+          service_slug: form.service.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-'), || 'N/A',
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
