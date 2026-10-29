@@ -6,8 +6,8 @@ import { type ContactRequest } from '../../lib/api';
 type FormState = 'idle' | 'submitting' | 'success' | 'error';
 
 const SERVICES = [
-  'AI & ML', 'Generative AI', 'Full-Stack Development', 'Data Analytics', 
-  'Software Engineering', 'Cloud & DevOps', 'CRM', 'ERP', 'HRMS', 
+  'AI & ML', 'Generative AI', 'Full-Stack Development', 'Data Analytics',
+  'Software Engineering', 'Cloud & DevOps', 'CRM', 'ERP', 'HRMS',
   'FinTech', 'Enterprise AI', 'BI', 'API Integration', 'Other'
 ];
 
@@ -37,14 +37,13 @@ export function ContactForm() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // Basic client-side validation
+
     const errors: Record<string, string> = {};
     if (!form.name || form.name.length < 2) errors.name = 'Name is required';
     if (!form.email || !form.email.includes('@')) errors.email = 'Valid email is required';
     if (!form.service) errors.service = 'Select a service';
     if (!form.message || form.message.length < 10) errors.message = 'Message must be at least 10 characters';
-    
+
     if (Object.keys(errors).length > 0) {
       setFieldErrors(errors);
       return;
@@ -54,30 +53,32 @@ export function ContactForm() {
     setError('');
 
     try {
+      const slug = form.service.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-');
+
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        "template_t3fchai",
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
           name: form.name,
           email: form.email,
           company: form.company || 'N/A',
           service: form.service,
           message: form.message,
-          preferredContact: form.preferredContact,
-          service_slug: form.service.toLowerCase().replace(/ & /g, '-').replace(/ /g, '-'), || 'N/A',
+          preferredContact: form.preferredContact || 'N/A',
+          service_slug: slug,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
 
-      // Send auto-reply to the client
       await emailjs.send(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        "template_uncasv8",
+        import.meta.env.VITE_EMAILJS_AUTOREPLY_ID,
         {
           name: form.name,
           email: form.email,
           service: form.service,
           message: form.message,
+          service_slug: slug,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       );
