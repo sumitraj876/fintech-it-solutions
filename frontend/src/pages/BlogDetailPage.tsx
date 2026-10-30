@@ -33,9 +33,9 @@ export default function BlogDetailPage() {
             
             <div 
               className="
-                text-offwhite/80 leading-relaxed text-[1.05rem]
+                text-offwhite/80 leading-[1.9] text-[1.05rem]
                 [&_h2]:text-offwhite [&_h2]:text-3xl [&_h2]:font-bold [&_h2]:mt-12 [&_h2]:mb-6 [&_h2]:border-b [&_h2]:border-white/10 [&_h2]:pb-3
-                [&_h3]:text-yellow [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-8 [&_h3]:mb-4
+                [&_h3]:text-yellow [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-10 [&_h3]:mb-4
                 [&_p]:mb-6 [&_p]:leading-relaxed
                 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-3 [&_ul]:mb-8
                 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-3 [&_ol]:mb-8
@@ -47,10 +47,10 @@ export default function BlogDetailPage() {
                 [&_td]:p-4 [&_td]:border [&_td]:border-white/10 [&_td]:text-offwhite/70
                 [&_em]:text-offwhite/50 [&_em]:text-sm
                 
-                [&_.flex]:flex [&_.flex-col]:flex-col [&_.items-center]:items-center
+                [&_.flex-col]:flex [&_.flex-col]:flex-col [&_.items-center]:items-center
                 [&_.gap-2]:gap-2 [&_.my-6]:my-10
                 [&_.bg-jet\/60]:bg-white/5 [&_.bg-jet\/60]:shadow-sm [&_.border]:border-white/10 [&_.rounded-lg]:rounded-xl
-                [&_.px-6]:px-6 [&_.py-3]:py-3 [&_.text-offwhite]:text-offwhite [&_.font-semibold]:font-semibold
+                [&_.px-6]:px-6 [&_.py-3]:py-4 [&_.text-offwhite]:text-offwhite [&_.font-semibold]:font-semibold
                 [&_.w-full]:w-full [&_.max-w-md]:max-w-md [&_.text-center]:text-center
                 [&_.bg-pink\/10]:bg-pink/10 [&_.border-pink\/30]:border-pink/30 [&_.text-pink]:text-pink [&_.w-64]:w-64
               "
