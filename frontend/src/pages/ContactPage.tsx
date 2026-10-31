@@ -55,7 +55,7 @@ export default function ContactPage() {
                   <ul className="mt-3 space-y-2.5 text-sm text-offwhite/65 leading-relaxed">
                     <li className="flex gap-2">
                       <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-pink" />
-                      A reply within a reasonable timeframe Ã¢â‚¬â€ not a marketing autoresponder.
+                      A reply within a reasonable timeframe — not a marketing autoresponder.
                     </li>
                     <li className="flex gap-2">
                       <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-pink" />
