@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
-import { Mail, Instagram } from 'lucide-react';
+import { Mail, Instagram, Youtube } from 'lucide-react';
 import { footerNav, primaryNav, site } from '../../config/site';
+import { useCookieConsent } from '../../context/CookieConsentContext';
 
 const year = new Date().getFullYear();
 
 export function Footer() {
+  const { openPreferences } = useCookieConsent();
+
   return (
     <footer className="relative border-t border-white/[0.06] bg-jet">
       <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12 py-14 md:py-20">
@@ -12,11 +15,7 @@ export function Footer() {
           
           {/* Brand column */}
           <div className="md:col-span-5">
-            <Link
-              to="/"
-              className="font-display text-lg font-bold tracking-tight inline-block"
-              aria-label={`${site.company.name} — home`}
-            >
+            <Link to="/" className="font-display text-lg font-bold tracking-tight inline-block" aria-label={`${site.company.name} - home`}>
               <span className="text-offwhite">FINTECH</span>{' '}
               <span className="text-pink">IT</span>{' '}
               <span className="text-offwhite">SOLUTIONS</span>
@@ -29,16 +28,11 @@ export function Footer() {
 
           {/* Quick links */}
           <div className="md:col-span-3">
-            <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-yellow">
-              Explore
-            </h3>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-yellow">Explore</h3>
             <ul className="mt-4 flex flex-col gap-2">
               {primaryNav.map((item) => (
                 <li key={item.to}>
-                  <Link
-                    to={item.to}
-                    className="text-sm text-offwhite/70 transition-colors hover:text-offwhite"
-                  >
+                  <Link to={item.to} className="text-sm text-offwhite/70 transition-colors hover:text-offwhite">
                     {item.label}
                   </Link>
                 </li>
@@ -46,40 +40,25 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Get in touch (Icons) */}
+          {/* Get in touch + Social Icons */}
           <div className="md:col-span-4">
-            <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-yellow">
-              Get in touch
-            </h3>
+            <h3 className="text-xs font-semibold uppercase tracking-[0.25em] text-yellow">Get in touch</h3>
             <div className="mt-4 flex items-center gap-4">
-              {/* Mail Icon - Updated to professional email */}
-              <a
-                href="mailto:hello@fintechitsolutions.in"
-                aria-label="Email us"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.10] bg-white/[0.02] text-offwhite/70 transition-all hover:border-pink hover:bg-pink/10 hover:text-pink"
-              >
+              <a href="mailto:hello@fintechitsolutions.in" aria-label="Email us" className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.10] bg-white/[0.02] text-offwhite/70 transition-all hover:border-pink hover:bg-pink/10 hover:text-pink">
                 <Mail size={18} />
               </a>
-
-              {/* Instagram Icon - Updated to new subdomain */}
-              <a
-                href="https://instagram.fintechitsolutions.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Follow us on Instagram"
-                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.10] bg-white/[0.02] text-offwhite/70 transition-all hover:border-pink hover:bg-pink/10 hover:text-pink"
-              >
+              <a href={site.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.10] bg-white/[0.02] text-offwhite/70 transition-all hover:border-pink hover:bg-pink/10 hover:text-pink">
                 <Instagram size={18} />
+              </a>
+              <a href={site.socials.youtube} target="_blank" rel="noopener noreferrer" aria-label="Subscribe on YouTube" className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/[0.10] bg-white/[0.02] text-offwhite/70 transition-all hover:border-pink hover:bg-pink/10 hover:text-pink">
+                <Youtube size={18} />
               </a>
             </div>
             
             <ul className="mt-6 flex flex-col gap-3">
               {footerNav.map((item) => (
                 <li key={item.to}>
-                  <Link
-                    to={item.to}
-                    className="text-sm text-offwhite/70 transition-colors hover:text-pink"
-                  >
+                  <Link to={item.to} className="text-sm text-offwhite/70 transition-colors hover:text-pink">
                     {item.label}
                   </Link>
                 </li>
@@ -101,9 +80,13 @@ export function Footer() {
           
           {/* Legal Links */}
           <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-xs text-offwhite/50">
-            <Link to="/privacy" className="hover:text-pink transition-colors">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-pink transition-colors">Terms of Service</Link>
-            <Link to="/license" className="hover:text-pink transition-colors">Licensing</Link>
+            <Link to="/privacy-policy" className="hover:text-pink transition-colors">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="hover:text-pink transition-colors">Terms of Service</Link>
+            <Link to="/cookie-policy" className="hover:text-pink transition-colors">Cookie Policy</Link>
+            <button onClick={openPreferences} className="hover:text-pink transition-colors text-left">Cookie Settings</button>
+            <Link to="/licensing" className="hover:text-pink transition-colors">Licensing</Link>
+            <Link to="/disclaimer" className="hover:text-pink transition-colors">Disclaimer</Link>
+            <Link to="/privacy-requests" className="hover:text-pink transition-colors">Privacy Requests</Link>
           </div>
         </div>
       </div>

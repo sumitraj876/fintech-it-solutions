@@ -25,7 +25,8 @@ export const site = {
 
   // Set to null until verified.
   socials: {
-    instagram: 'https://instagram.com/your-handle', // <-- REPLACE WITH REAL LINK LATER
+    instagram: 'https://instagram.fintechitsolutions.in',
+    youtube: 'https://www.youtube.com/channel/UCEAmfaDnh8bIJiz5bTC2vjQ', // <-- REPLACE WITH REAL LINK LATER
   },
 } as const;
 
@@ -55,7 +56,7 @@ export const footerNav: NavItem[] = [
  * Edit text here without touching any component.
  */
 export const hero = {
-  eyebrow: 'FINTECH IT SOLUTIONS Â· EST. 2024',
+  eyebrow: 'FINTECH IT SOLUTIONS Ã‚Â· EST. 2024',
   headlineTop: 'WE ENGINEER',
   headlineBottom: "WHAT'S NEXT.",
   supporting:
