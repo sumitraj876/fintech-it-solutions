@@ -14,6 +14,7 @@ type ConsentContextType = {
   showBanner: boolean;
   saveConsent: (prefs: Partial<CookieConsent>, status: CookieConsent['consentStatus']) => void;
   closeBannerWithoutSaving: () => void;
+  openPreferences: () => void;
 };
 
 const defaultConsent: CookieConsent = {
@@ -64,8 +65,12 @@ export function CookieConsentProvider({ children }: { children: ReactNode }) {
     saveConsent({ functional: false, analytics: false, marketing: false }, 'rejected_all');
   };
 
+  const openPreferences = () => {
+    setShowBanner(true);
+  };
+
   return (
-    <ConsentContext.Provider value={{ consent, showBanner, saveConsent, closeBannerWithoutSaving }}>
+    <ConsentContext.Provider value={{ consent, showBanner, saveConsent, closeBannerWithoutSaving, openPreferences }}>
       {children}
     </ConsentContext.Provider>
   );
